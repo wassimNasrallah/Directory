@@ -34,7 +34,7 @@ public class AddContact extends AppCompatActivity {
         getSupportActionBar().setTitle("Add Contact");
         buttonListener();
 
-        AddContact = (Button) findViewById(R.id.buttonAdd);
+        /*AddContact = (Button) findViewById(R.id.buttonAdd);
         lv = (ListView) findViewById(R.id.ListView);
         textFirstName = (EditText)findViewById(R.id.editText_FirstName);
         textLastName = (EditText)findViewById(R.id.editText_LastName);
@@ -45,12 +45,13 @@ public class AddContact extends AppCompatActivity {
         al = new ArrayList<String>();
         adapter = new ArrayAdapter<String>(AddContact.this, android.R.layout.simple_list_item_1, al);
 
-        lv.setAdapter(adapter);
+        lv.setAdapter(adapter);*/
 
     }
 
     public void buttonListener() {
 
+        AddContact = (Button) findViewById(R.id.buttonAdd);
         AddContact.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -59,6 +60,21 @@ public class AddContact extends AppCompatActivity {
                 String res = textFirstName.getText().toString();
                 al.add(res);
                 adapter.notifyDataSetChanged();
+
+
+                AddContact = (Button) findViewById(R.id.buttonAdd);
+                lv = (ListView) findViewById(R.id.ListView);
+                textFirstName = (EditText)findViewById(R.id.editText_FirstName);
+                textLastName = (EditText)findViewById(R.id.editText_LastName);
+                textEmail = (EditText)findViewById(R.id.editText_Email);
+                textPhone = (EditText)findViewById(R.id.editText_Phone);
+
+
+                al = new ArrayList<String>();
+                adapter = new ArrayAdapter<String>(AddContact.this, android.R.layout.simple_list_item_1, al);
+
+                lv.setAdapter(adapter);
+
 
                 Intent i = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(i);
